@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-assisted-program-verification"
+version = "0.1.0"
+description = "AI-assisted Python program verification framework"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+dependencies = [
+    "openai>=2.45,<3",
+    "pydantic>=2.7,<3",
+    "python-dotenv>=1.0,<2",
+    "pytest>=8,<9",
+]
+
+[project.scripts]
+aipv = "app.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
