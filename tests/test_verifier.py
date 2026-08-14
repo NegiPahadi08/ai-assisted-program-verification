@@ -46,15 +46,10 @@ def test_buggy_program_verification():
     )
 
     assert report.syntax_valid is True
+    assert report.status == "PARTIALLY VERIFIED"
 
-    assert (
-        report.status
-        in {
-            "PARTIALLY VERIFIED",
-            "FAILED",
-        }
-    )
-
-    assert (
-        len(report.issues) > 0
-    )
+    assert any(
+    issue.source == "static"
+    and "missing_value" in issue.message
+    for issue in report.issues
+)

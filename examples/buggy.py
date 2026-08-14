@@ -2,10 +2,12 @@ def divide(a, b):
     return a / b
 
 
-def calculate_average(numbers):
+def calculate_average(numbers: list[int]) -> float:
+    if not numbers:
+        return 0.0
+
     total = sum(numbers)
     return total / len(numbers)
-
 
 def unsafe_execute(code):
     return eval(code)

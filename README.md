@@ -1,6 +1,6 @@
 # AI-Assisted Program Verification
 
-AI-Assisted Program Verification is a software verification framework that combines:
+AI-Assisted Program Verification is a Python-based software verification framework that combines:
 
 - Static program analysis
 - Automated test generation
@@ -18,35 +18,37 @@ This project explores how Artificial Intelligence can assist developers and rese
 
 1. Understanding source code
 2. Detecting possible defects
-3. Generating test cases
+3. Generating candidate test cases
 4. Executing generated tests
-5. Identifying edge cases
+5. Identifying potential edge cases
 6. Producing an evidence-based verification report
 
-AI does not make the final verification decision by itself.
+AI does not make the final verification decision by itself. Static analysis and executable tests provide independent verification evidence.
+
+---
 
 ## Architecture
 
 ```text
-                    SOURCE CODE
-                         |
-          +--------------+--------------+
-          |              |              |
-          v              v              v
-    Static Analysis   AI Analysis   Test Generation
-          |              |              |
-          |              |              v
-          |              |         Test Execution
-          |              |              |
-          +--------------+--------------+
-                         |
-                         v
-                Verification Engine
-                         |
-                         v
-                 Verification Report
-                         |
-             +-----------+-----------+
-             |           |           |
-             v           v           v
-         VERIFIED     PARTIAL      FAILED
+                         SOURCE CODE
+                              |
+             +----------------+----------------+
+             |                |                |
+             v                v                v
+      Static Analysis    AI Analysis     Test Generation
+             |                |                |
+             |                |                v
+             |                |          Test Execution
+             |                |                |
+             +----------------+----------------+
+                              |
+                              v
+                     Verification Engine
+                              |
+                              v
+                     Verification Report
+                              |
+                  +-----------+-----------+
+                  |           |           |
+                  v           v           v
+              VERIFIED    PARTIAL      FAILED
